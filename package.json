@@ -40,8 +40,7 @@
     "test:prod": "npm run lint && npm run test -- --coverage --no-cache"
   },
   "dependencies": {
-    "ta-json-x": "^2.5.0",
-    "r2-shared-js": "^1.0.0-alpha.5"
+    "ta-json-x": "^2.5.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.2",
