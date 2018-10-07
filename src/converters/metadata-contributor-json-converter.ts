@@ -10,7 +10,7 @@ export class JsonContributorConverter implements IPropertyConverter {
   public deserialize(value: JsonValue): Contributor {
     if (typeof value === 'string') {
       const c = new Contributor();
-      c.Name = value as string;
+      c.Name = value;
       return c;
     } else {
       return TaJson.deserialize<Contributor>(value, Contributor);

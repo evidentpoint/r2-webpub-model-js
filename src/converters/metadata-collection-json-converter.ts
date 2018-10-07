@@ -10,7 +10,7 @@ export class JsonCollectionConverter implements IPropertyConverter {
   public deserialize(value: JsonValue): Collection {
     if (typeof value === 'string') {
       const c = new Collection();
-      c.Name = value as string;
+      c.Name = value;
       return c;
     } else {
       return TaJson.deserialize<Collection>(value, Collection);
