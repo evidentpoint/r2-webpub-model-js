@@ -1,8 +1,13 @@
-import { JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
+import { JSON as TaJson, JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
 import { Link } from '../../models/link';
+import { Publication } from '../../models/publication';
+import { EPUBMetadata } from './metadata';
 
 @JsonObject()
-export class EPUBPublication {
+export class EPUBPublication extends Publication {
+  @JsonProperty('metadata')
+  public Metadata!: EPUBMetadata;
+
   @JsonProperty('toc')
   @JsonElementType(Link)
   public TOC!: Link[];
@@ -30,4 +35,8 @@ export class EPUBPublication {
   @JsonProperty('lot')
   @JsonElementType(Link)
   public LOT!: Link[];
+
+  public static parse(json: string): EPUBPublication {
+    return TaJson.parse<EPUBPublication>(json, EPUBPublication);
+  }
 }
