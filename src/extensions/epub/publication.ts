@@ -1,8 +1,8 @@
 import { JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
-import { Link } from '../../link';
+import { Link } from '../../models/link';
 
 @JsonObject()
-export class Publication {
+export class EPUBPublication {
   @JsonProperty('toc')
   @JsonElementType(Link)
   public TOC!: Link[];

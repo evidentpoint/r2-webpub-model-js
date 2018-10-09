@@ -5,11 +5,18 @@ import {
   JsonObject,
   JsonProperty,
   OnDeserialized,
+  propertyConverters,
 } from 'ta-json-x';
+
+import { JsonStringConverter } from './converters/string-converter';
+import { JsonDateConverter } from './converters/date-converter';
+import { JsonNumberConverter } from './converters/number-converter';
+
+propertyConverters.set(Date, new JsonDateConverter());
+propertyConverters.set(Number, new JsonNumberConverter());
 
 import { Metadata } from './metadata';
 import { Link } from './link';
-import { JsonStringConverter } from './converters/ta-json-string-converter';
 
 @JsonObject()
 export class Publication {

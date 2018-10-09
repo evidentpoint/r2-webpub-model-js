@@ -1,6 +1,6 @@
 import { JsonObject, JsonProperty, OnDeserialized } from 'ta-json-x';
 
-import { IStringMap } from './metadata-multilang';
+import { IStringMap } from './multilang';
 
 @JsonObject()
 export class Thing {

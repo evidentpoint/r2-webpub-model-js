@@ -6,12 +6,13 @@ import {
   OnDeserialized,
 } from 'ta-json-x';
 
-import { BelongsTo } from './metadata-belongsto';
-import { Contributor } from './metadata-contributor';
-import { IStringMap } from './metadata-multilang';
-import { Subject } from './metadata-subject';
-import { JsonStringConverter } from './converters/ta-json-string-converter';
-import { Direction } from './metadata-direction';
+import { JsonStringConverter } from './converters/string-converter';
+
+import { BelongsTo } from './metadata/belongsto';
+import { Contributor } from './metadata/contributor';
+import { IStringMap } from './metadata/multilang';
+import { Subject } from './metadata/subject';
+import { ReadingProgression } from './metadata/readingprogression';
 
 @JsonObject()
 export class Metadata {
@@ -97,7 +98,7 @@ export class Metadata {
   public Imprint!: Contributor[];
 
   @JsonProperty('readingProgression')
-  public ReadingProgression: Direction = Direction.Auto;
+  public ReadingProgression: ReadingProgression = ReadingProgression.Auto;
 
   @JsonProperty('description')
   public Description!: string;

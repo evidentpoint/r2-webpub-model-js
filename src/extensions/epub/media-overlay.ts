@@ -1,5 +1,5 @@
 import { JsonConverter, JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
-import { JsonStringConverter } from '../../converters/ta-json-string-converter';
+import { JsonStringConverter } from '../../models/converters/string-converter';
 
 // http://www.idpf.org/epub/31/spec/epub-mediaoverlays.html#app-clock-examples
 // https://www.w3.org/TR/2008/REC-SMIL3-20081201/smil-timing.html#q22

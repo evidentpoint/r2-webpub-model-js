@@ -1,9 +1,9 @@
 import { JsonConverter, JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
 
-import { Metadata } from '../../metadata';
-import { Properties } from '../../metadata-properties';
-import { JsonStringConverter } from '../../converters/ta-json-string-converter';
-import { MediaOverlay } from './metadata-media-overlay';
+import { Metadata } from '../../models/metadata';
+import { Properties } from '../../models/properties';
+import { JsonStringConverter } from '../../models/converters/string-converter';
+import { MediaOverlay } from './metadata/media-overlay';
 
 @JsonObject()
 export class EPUBMetadata extends Metadata {

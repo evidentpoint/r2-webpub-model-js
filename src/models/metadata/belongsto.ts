@@ -1,6 +1,6 @@
 import { JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
 
-import { Collection } from './metadata-collection';
+import { Collection } from './collection';
 
 @JsonObject()
 export class BelongsTo {

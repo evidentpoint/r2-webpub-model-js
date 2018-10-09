@@ -1,4 +1,4 @@
-import { Publication } from '../src';
+import { Publication } from '../src/r2-webpub-model-js';
 
 /**
  * Publication test

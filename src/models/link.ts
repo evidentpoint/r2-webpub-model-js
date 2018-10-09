@@ -1,5 +1,3 @@
-import { JsonStringConverter } from './converters/ta-json-string-converter';
-
 import {
   JsonConverter,
   JsonElementType,
@@ -8,7 +6,9 @@ import {
   OnDeserialized,
 } from 'ta-json-x';
 
-import { Properties } from './metadata-properties';
+import { JsonStringConverter } from './converters/string-converter';
+
+import { Properties } from './properties';
 
 @JsonObject()
 export class Link {
@@ -44,6 +44,7 @@ export class Link {
   @JsonElementType(String)
   public Rel!: string[];
 
+  // It may make sense to do without these helpers if Rel is a Set
   public AddRels(rels: string[]) {
     rels.forEach((rel) => {
       this.AddRel(rel);

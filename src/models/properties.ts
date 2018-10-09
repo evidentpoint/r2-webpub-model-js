@@ -1,5 +1,5 @@
 import { JsonConverter, JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
-import { JsonStringConverter } from './converters/ta-json-string-converter';
+import { JsonStringConverter } from './converters/string-converter';
 
 // import { Encrypted } from '@r2-lcp-js/models/metadata-encrypted';
 
