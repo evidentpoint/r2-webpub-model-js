@@ -23,7 +23,6 @@ describe('Publication', () => {
     test('deserialize and serialize', () => {
         const jsonObject = importedFixtures[fixture];
         const model = Publication.deserialize(jsonObject);
-        debugger;
         expect(model.serialize()).toEqual(jsonObject);
     });
 
