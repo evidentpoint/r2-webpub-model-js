@@ -2,7 +2,7 @@ import { IPropertyConverter, JsonValue } from 'ta-json-x';
 
 export class JsonDateConverter implements IPropertyConverter {
   public serialize(property: Date | undefined): JsonValue {
-    return property ? property.toISOString() : 'Invalid Date';
+    return property ? property.toISOString() : null;
   }
 
   public deserialize(value: JsonValue): Date | undefined {

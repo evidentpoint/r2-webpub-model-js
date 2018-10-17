@@ -12,6 +12,11 @@ import { Properties } from './properties';
 
 @JsonObject()
 export class Link {
+  @JsonProperty('rel')
+  @JsonConverter(JsonStringConverter)
+  @JsonElementType(String)
+  public Rel!: string[];
+
   @JsonProperty('href')
   public Href!: string;
 
@@ -39,32 +44,27 @@ export class Link {
   @JsonProperty('templated')
   public Templated!: boolean;
 
-  @JsonProperty('rel')
-  @JsonConverter(JsonStringConverter)
-  @JsonElementType(String)
-  public Rel!: string[];
-
   // It may make sense to do without these helpers if Rel is a Set
-  public AddRels(rels: string[]) {
-    rels.forEach((rel) => {
-      this.AddRel(rel);
-    });
-  }
-
-  public AddRel(rel: string) {
-    if (this.HasRel(rel)) {
-      return;
-    }
-    if (!this.Rel) {
-      this.Rel = [rel];
-    } else {
-      this.Rel.push(rel);
-    }
-  }
-
-  public HasRel(rel: string): boolean {
-    return this.Rel && this.Rel.indexOf(rel) >= 0;
-  }
+  // public AddRels(rels: string[]) {
+  //   rels.forEach((rel) => {
+  //     this.AddRel(rel);
+  //   });
+  // }
+  //
+  // public AddRel(rel: string) {
+  //   if (this.HasRel(rel)) {
+  //     return;
+  //   }
+  //   if (!this.Rel) {
+  //     this.Rel = [rel];
+  //   } else {
+  //     this.Rel.push(rel);
+  //   }
+  // }
+  //
+  // public HasRel(rel: string): boolean {
+  //   return this.Rel && this.Rel.indexOf(rel) >= 0;
+  // }
 
   @OnDeserialized()
   // tslint:disable-next-line:no-unused-variable

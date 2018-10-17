@@ -44,12 +44,16 @@ export class Publication {
     return TaJson.parse<Publication>(json, Publication);
   }
 
-  public serialize(): string {
-    return TaJson.serialize(this);
-  }
-
   public stringify(): string {
     return TaJson.stringify(this);
+  }
+
+  public static deserialize(object: any): Publication {
+    return TaJson.deserialize<Publication>(object, Publication);
+  }
+
+  public serialize(): any {
+    return TaJson.serialize(this);
   }
 
   @OnDeserialized()

@@ -1,10 +1,4 @@
-import {
-  JsonConverter,
-  JsonElementType,
-  JsonObject,
-  JsonProperty,
-  OnDeserialized,
-} from 'ta-json-x';
+import { JsonConverter, JsonElementType, JsonObject, JsonProperty, OnDeserialized } from 'ta-json-x';
 
 import { JsonStringConverter } from './converters/string-converter';
 
@@ -16,11 +10,11 @@ import { ReadingProgression } from './metadata/readingprogression';
 
 @JsonObject()
 export class Metadata {
-  @JsonProperty('identifier')
-  public Identifier!: string;
-
   @JsonProperty('@type')
   public Type!: string;
+
+  @JsonProperty('identifier')
+  public Identifier!: string;
 
   @JsonProperty('title')
   // @JsonType(String)
@@ -98,7 +92,7 @@ export class Metadata {
   public Imprint!: Contributor[];
 
   @JsonProperty('readingProgression')
-  public ReadingProgression: ReadingProgression = ReadingProgression.Auto;
+  public ReadingProgression!: ReadingProgression;
 
   @JsonProperty('description')
   public Description!: string;
