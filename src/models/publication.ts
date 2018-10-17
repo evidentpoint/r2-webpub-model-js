@@ -60,12 +60,15 @@ export class Publication {
   // tslint:disable-next-line:no-unused-variable
   // @ts-ignore: TS6133 (is declared but its value is never read.)
   private _OnDeserialized() {
+    /* istanbul ignore next */
     if (!this.Metadata) {
       console.log('Required [Publication.Metadata] is not set!');
     }
+    /* istanbul ignore next */
     if (!this.Links) {
       console.log('Required [Publication.Links] is not set!');
     }
+    /* istanbul ignore next */
     if (!this.ReadingOrder) {
       console.log('Required [Publication.ReadingOrder] is not set!');
     }

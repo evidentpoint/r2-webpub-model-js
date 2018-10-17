@@ -9,6 +9,7 @@ export class JsonNumberConverter implements IPropertyConverter {
     return Number(value);
   }
 
+  /* istanbul ignore next */
   public collapseArrayWithSingleItem(): boolean {
     return false;
   }

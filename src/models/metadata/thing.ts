@@ -19,6 +19,7 @@ export class Thing {
   // @ts-ignore: TS6133 (is declared but its value is never read.)
   private _OnDeserialized() {
     // tslint:disable-line
+    /* istanbul ignore next */
     if (!this.Name) {
       console.log('Required [Thing.Name] is not set!');
     }

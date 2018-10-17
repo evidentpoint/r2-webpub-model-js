@@ -10,6 +10,7 @@ export class JsonDateConverter implements IPropertyConverter {
     return isNaN(date.getTime()) ? undefined : date;
   }
 
+  /* istanbul ignore next */
   public collapseArrayWithSingleItem(): boolean {
     return false;
   }

@@ -23,6 +23,7 @@ export class JsonThingConverter<T> implements IPropertyConverter {
   }
 
   public collapseArrayWithSingleItem(): boolean {
+    /* istanbul ignore next */
     return true;
   }
 }

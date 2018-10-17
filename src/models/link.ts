@@ -70,6 +70,7 @@ export class Link {
   // tslint:disable-next-line:no-unused-variable
   // @ts-ignore: TS6133 (is declared but its value is never read.)
   private _OnDeserialized() {
+    /* istanbul ignore next */
     if (!this.Type) {
       console.log('Required [Link.Type] is not set!');
     }

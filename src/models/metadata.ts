@@ -114,6 +114,7 @@ export class Metadata {
   // tslint:disable-next-line:no-unused-variable
   // @ts-ignore: TS6133 (is declared but its value is never read.)
   private _OnDeserialized() {
+    /* istanbul ignore next */
     if (!this.Title) {
       console.log('Required [Metadata.Title] is not set!');
     }
