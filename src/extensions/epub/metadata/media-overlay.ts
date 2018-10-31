@@ -3,8 +3,8 @@ import { JsonObject, JsonProperty } from 'ta-json-x';
 @JsonObject()
 export class MediaOverlay {
   @JsonProperty('active-class')
-  public ActiveClass!: string;
+  public activeClass!: string;
 
   @JsonProperty('playback-active-class')
-  public PlaybackActiveClass!: string;
+  public playbackActiveClass!: string;
 }

@@ -5,13 +5,13 @@ import { IStringMap } from './multilang';
 @JsonObject()
 export class Thing {
   @JsonProperty('name')
-  public Name!: string | IStringMap;
+  public name!: string | IStringMap;
 
   @JsonProperty('identifier')
-  public Identifier!: string;
+  public identifier!: string;
 
   @JsonProperty('sortAs')
-  public SortAs!: string;
+  public sortAs!: string;
 
   @OnDeserialized()
   // tslint:disable-next-line:no-unused-variable
@@ -20,7 +20,7 @@ export class Thing {
   private _OnDeserialized() {
     // tslint:disable-line
     /* istanbul ignore next */
-    if (!this.Name) {
+    if (!this.name) {
       console.log('Required [Thing.Name] is not set!');
     }
   }

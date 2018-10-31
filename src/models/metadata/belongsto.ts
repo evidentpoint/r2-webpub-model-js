@@ -6,9 +6,9 @@ import { Collection } from './collection';
 export class BelongsTo {
   @JsonProperty('series')
   @JsonElementType(Collection)
-  public Series!: Collection[];
+  public series!: Collection[];
 
   @JsonProperty('collection')
   @JsonElementType(Collection)
-  public Collection!: Collection[];
+  public collection!: Collection[];
 }

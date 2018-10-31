@@ -23,22 +23,22 @@ export class Publication {
   @JsonConverter(JsonStringConverter)
   @JsonProperty('@context')
   @JsonElementType(String)
-  public Context!: string[];
+  public context!: string[];
 
   @JsonProperty('metadata')
-  public Metadata!: Metadata;
+  public metadata!: Metadata;
 
   @JsonProperty('links')
   @JsonElementType(Link)
-  public Links!: Link[];
+  public links!: Link[];
 
   @JsonProperty('readingOrder')
   @JsonElementType(Link)
-  public ReadingOrder!: Link[];
+  public readingOrder!: Link[];
 
   @JsonProperty('resources')
   @JsonElementType(Link)
-  public Resources!: Link[];
+  public resources!: Link[];
 
   public static parse(json: string): Publication {
     return TaJson.parse<Publication>(json, Publication);
@@ -61,15 +61,15 @@ export class Publication {
   // @ts-ignore: TS6133 (is declared but its value is never read.)
   private _OnDeserialized() {
     /* istanbul ignore next */
-    if (!this.Metadata) {
+    if (!this.metadata) {
       console.log('Required [Publication.Metadata] is not set!');
     }
     /* istanbul ignore next */
-    if (!this.Links) {
+    if (!this.links) {
       console.log('Required [Publication.Links] is not set!');
     }
     /* istanbul ignore next */
-    if (!this.ReadingOrder) {
+    if (!this.readingOrder) {
       console.log('Required [Publication.ReadingOrder] is not set!');
     }
   }

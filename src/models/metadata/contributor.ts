@@ -9,7 +9,7 @@ export class Contributor extends Thing {
   @JsonConverter(JsonStringConverter)
   @JsonProperty('role')
   @JsonElementType(String)
-  public Role!: string[];
+  public role!: string[];
 }
 
 propertyConverters.set(Contributor, new JsonThingConverter(Contributor));

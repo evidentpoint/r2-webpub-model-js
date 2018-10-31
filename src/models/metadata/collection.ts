@@ -6,7 +6,7 @@ import { Thing } from './thing';
 @JsonObject()
 export class Collection extends Thing {
   @JsonProperty('position')
-  public Position!: number;
+  public position!: number;
 }
 
 propertyConverters.set(Collection, new JsonThingConverter(Collection));

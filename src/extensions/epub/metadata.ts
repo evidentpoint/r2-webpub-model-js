@@ -8,19 +8,19 @@ import { MediaOverlay } from './metadata/media-overlay';
 @JsonObject()
 export class EPUBMetadata extends Metadata {
   @JsonProperty('rendition')
-  public Rendition!: Properties;
+  public rendition!: Properties;
 
   @JsonProperty('source')
-  public Source!: string;
+  public source!: string;
 
   @JsonConverter(JsonStringConverter)
   @JsonProperty('epub-type')
   @JsonElementType(String)
-  public EpubType!: string[];
+  public epubType!: string[];
 
   @JsonProperty('rights')
-  public Rights!: string;
+  public rights!: string;
 
   @JsonProperty('media-overlay')
-  public MediaOverlay!: MediaOverlay;
+  public mediaOverlay!: MediaOverlay;
 }

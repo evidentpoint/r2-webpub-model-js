@@ -4,8 +4,8 @@ import { Thing } from './thing';
 @JsonObject()
 export class Subject extends Thing {
   @JsonProperty('scheme')
-  public Scheme!: string;
+  public scheme!: string;
 
   @JsonProperty('code')
-  public Code!: string;
+  public code!: string;
 }

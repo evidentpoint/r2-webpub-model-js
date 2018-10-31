@@ -15,34 +15,34 @@ export class Link {
   @JsonProperty('rel')
   @JsonConverter(JsonStringConverter)
   @JsonElementType(String)
-  public Rel!: string[];
+  public rel!: Set<string>;
 
   @JsonProperty('href')
-  public Href!: string;
+  public href!: string;
 
   @JsonProperty('type')
-  public Type!: string;
+  public type!: string;
 
   @JsonProperty('height')
-  public Height!: number;
+  public height!: number;
 
   @JsonProperty('width')
-  public Width!: number;
+  public width!: number;
 
   @JsonProperty('title')
-  public Title!: string;
+  public title!: string;
 
   @JsonProperty('properties')
-  public Properties!: Properties;
+  public properties!: Properties;
 
   @JsonProperty('duration')
-  public Duration!: number;
+  public duration!: number;
 
   @JsonProperty('bitrate')
-  public Bitrate!: number;
+  public bitrate!: number;
 
   @JsonProperty('templated')
-  public Templated!: boolean;
+  public templated!: boolean;
 
   // It may make sense to do without these helpers if Rel is a Set
   // public AddRels(rels: string[]) {
@@ -71,7 +71,7 @@ export class Link {
   // @ts-ignore: TS6133 (is declared but its value is never read.)
   private _OnDeserialized() {
     /* istanbul ignore next */
-    if (!this.Type) {
+    if (!this.type) {
       console.log('Required [Link.Type] is not set!');
     }
   }

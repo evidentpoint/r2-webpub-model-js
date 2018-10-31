@@ -6,35 +6,35 @@ import { EPUBMetadata } from './metadata';
 @JsonObject()
 export class EPUBPublication extends Publication {
   @JsonProperty('metadata')
-  public Metadata!: EPUBMetadata;
+  public metadata!: EPUBMetadata;
 
   @JsonProperty('toc')
   @JsonElementType(Link)
-  public TOC!: Link[];
+  public toc!: Link[];
 
   @JsonProperty('page-list')
   @JsonElementType(Link)
-  public PageList!: Link[];
+  public pageList!: Link[];
 
   @JsonProperty('landmarks')
   @JsonElementType(Link)
-  public Landmarks!: Link[];
+  public landmarks!: Link[];
 
   @JsonProperty('loi')
   @JsonElementType(Link)
-  public LOI!: Link[];
+  public loi!: Link[];
 
   @JsonProperty('loa')
   @JsonElementType(Link)
-  public LOA!: Link[];
+  public loa!: Link[];
 
   @JsonProperty('lov')
   @JsonElementType(Link)
-  public LOV!: Link[];
+  public lov!: Link[];
 
   @JsonProperty('lot')
   @JsonElementType(Link)
-  public LOT!: Link[];
+  public lot!: Link[];
 
   public static parse(json: string): EPUBPublication {
     return TaJson.parse<EPUBPublication>(json, EPUBPublication);

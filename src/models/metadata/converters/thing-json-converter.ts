@@ -15,7 +15,7 @@ export class JsonThingConverter<T> implements IPropertyConverter {
   public deserialize(value: JsonValue): T {
     if (typeof value === 'string') {
       const c = (new this.type() as unknown) as Thing;
-      c.Name = value;
+      c.name = value;
       return (c as unknown) as T;
     } else {
       return TaJson.deserialize<T>(value, this.type);

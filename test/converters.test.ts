@@ -41,9 +41,9 @@ describe('Converters', () => {
     const converter = new JsonThingConverter(Thing);
 
     const thingModel = new Thing();
-    thingModel.Name = 'foo';
-    thingModel.Identifier = 'bar';
-    thingModel.SortAs = 'foobar';
+    thingModel.name = 'foo';
+    thingModel.identifier = 'bar';
+    thingModel.sortAs = 'foobar';
 
     const thingObject = { identifier: 'bar', name: 'foo', sortAs: 'foobar' };
 
@@ -52,7 +52,7 @@ describe('Converters', () => {
     expect(converter.deserialize(thingObject)).toEqual(thingModel);
 
     const thingModelSimple = new Thing();
-    thingModelSimple.Name = 'foo';
+    thingModelSimple.name = 'foo';
 
     expect(converter.deserialize('foo')).toEqual(thingModelSimple);
   });

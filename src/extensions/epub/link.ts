@@ -7,7 +7,7 @@ import { Link } from '../../models/link';
 export class EPUBLink extends Link {
   @JsonProperty('children')
   @JsonElementType(Link)
-  public Children!: Link[];
+  public children!: Link[];
 
-  public MediaOverlays: MediaOverlayNode[] | undefined;
+  public mediaOverlays: MediaOverlayNode[] | undefined;
 }

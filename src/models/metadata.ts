@@ -6,116 +6,115 @@ import { BelongsTo } from './metadata/belongsto';
 import { Contributor } from './metadata/contributor';
 import { IStringMap } from './metadata/multilang';
 import { Subject } from './metadata/subject';
-import { ReadingProgression } from './metadata/readingprogression';
 
 @JsonObject()
 export class Metadata {
   @JsonProperty('@type')
-  public Type!: string;
+  public type!: string;
 
   @JsonProperty('identifier')
-  public Identifier!: string;
+  public identifier!: string;
 
   @JsonProperty('title')
   // @JsonType(String)
   // not needed because primitive string union with
   // simple object type (string keys, string values)
-  public Title!: string | IStringMap; // | string[] | IStringMap[]
+  public title!: string | IStringMap; // | string[] | IStringMap[]
 
   @JsonProperty('subtitle')
-  public Subtitle!: string | IStringMap;
+  public subtitle!: string | IStringMap;
 
   @JsonProperty('modified')
-  public Modified!: Date;
+  public modified!: Date;
 
   @JsonProperty('published')
-  public PublicationDate!: Date;
+  public published!: Date;
 
   @JsonConverter(JsonStringConverter)
   @JsonProperty('language')
   @JsonElementType(String)
-  public Language!: string[];
+  public language!: string[];
 
   @JsonProperty('sortAs')
-  public SortAs!: string;
+  public sortAs!: string;
 
   @JsonProperty('author')
   @JsonElementType(Contributor)
-  public Author!: Contributor[];
+  public author!: Contributor[];
 
   @JsonProperty('translator')
   @JsonElementType(Contributor)
-  public Translator!: Contributor[];
+  public translator!: Contributor[];
 
   @JsonProperty('editor')
   @JsonElementType(Contributor)
-  public Editor!: Contributor[];
+  public editor!: Contributor[];
 
   @JsonProperty('artist')
   @JsonElementType(Contributor)
-  public Artist!: Contributor[];
+  public artist!: Contributor[];
 
   @JsonProperty('illustrator')
   @JsonElementType(Contributor)
-  public Illustrator!: Contributor[];
+  public illustrator!: Contributor[];
 
   @JsonProperty('letterer')
   @JsonElementType(Contributor)
-  public Letterer!: Contributor[];
+  public letterer!: Contributor[];
 
   @JsonProperty('penciler')
   @JsonElementType(Contributor)
-  public Penciler!: Contributor[];
+  public penciler!: Contributor[];
 
   @JsonProperty('colorist')
   @JsonElementType(Contributor)
-  public Colorist!: Contributor[];
+  public colorist!: Contributor[];
 
   @JsonProperty('inker')
   @JsonElementType(Contributor)
-  public Inker!: Contributor[];
+  public inker!: Contributor[];
 
   @JsonProperty('narrator')
   @JsonElementType(Contributor)
-  public Narrator!: Contributor[];
+  public narrator!: Contributor[];
 
   @JsonProperty('contributor')
   @JsonElementType(Contributor)
-  public Contributor!: Contributor[];
+  public contributor!: Contributor[];
 
   @JsonProperty('publisher')
   @JsonElementType(Contributor)
-  public Publisher!: Contributor[];
+  public publisher!: Contributor[];
 
   @JsonProperty('imprint')
   @JsonElementType(Contributor)
-  public Imprint!: Contributor[];
+  public imprint!: Contributor[];
 
   @JsonProperty('readingProgression')
-  public ReadingProgression!: ReadingProgression;
+  public readingProgression!: 'auto' | 'ltr' | 'rtl';
 
   @JsonProperty('description')
-  public Description!: string;
+  public description!: string;
 
   @JsonProperty('duration')
-  public Duration!: number;
+  public duration!: number;
 
   @JsonProperty('numberOfPages')
-  public NumberOfPages!: number;
+  public numberOfPages!: number;
 
   @JsonProperty('belongsTo')
-  public BelongsTo!: BelongsTo;
+  public belongsTo!: BelongsTo;
 
   @JsonProperty('subject')
   @JsonElementType(Subject)
-  public Subject!: Subject[];
+  public subject!: Subject[];
 
   @OnDeserialized()
   // tslint:disable-next-line:no-unused-variable
   // @ts-ignore: TS6133 (is declared but its value is never read.)
   private _OnDeserialized() {
     /* istanbul ignore next */
-    if (!this.Title) {
+    if (!this.title) {
       console.log('Required [Metadata.Title] is not set!');
     }
   }

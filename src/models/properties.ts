@@ -8,25 +8,25 @@ export class Properties {
   @JsonConverter(JsonStringConverter)
   @JsonProperty('contains')
   @JsonElementType(String)
-  public Contains!: string[];
+  public contains!: string[];
 
   @JsonProperty('layout')
-  public Layout!: string;
+  public layout!: string;
 
   @JsonProperty('media-overlay')
-  public MediaOverlay!: string;
+  public mediaOverlay!: string;
 
   @JsonProperty('orientation')
-  public Orientation!: string;
+  public orientation!: string;
 
   @JsonProperty('overflow')
-  public Overflow!: string;
+  public overflow!: string;
 
   @JsonProperty('page')
-  public Page!: string;
+  public page!: string;
 
   @JsonProperty('spread')
-  public Spread!: string;
+  public spread!: string;
 
   // @JsonProperty('encrypted')
   // public Encrypted!: Encrypted;
