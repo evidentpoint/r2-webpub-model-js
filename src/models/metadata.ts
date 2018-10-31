@@ -1,4 +1,10 @@
-import { JsonConverter, JsonElementType, JsonObject, JsonProperty, OnDeserialized } from 'ta-json-x';
+import {
+  JsonConverter,
+  JsonElementType,
+  JsonObject,
+  JsonProperty,
+  OnDeserialized,
+} from 'ta-json-x';
 
 import { JsonStringConverter } from './converters/string-converter';
 

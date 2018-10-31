@@ -14,22 +14,21 @@ beforeAll(async () => {
 });
 
 describe('Publication', () => {
-
   test('instantiate', () => {
     expect(new Publication()).toBeInstanceOf(Publication);
   });
 
   describe.each(FIXTURES)('%s', (fixture) => {
     test('deserialize and serialize', () => {
-        const jsonObject = importedFixtures[fixture];
-        const model = Publication.deserialize(jsonObject);
-        expect(model.serialize()).toEqual(jsonObject);
+      const jsonObject = importedFixtures[fixture];
+      const model = Publication.deserialize(jsonObject);
+      expect(model.serialize()).toEqual(jsonObject);
     });
 
     test('parse and stringify', () => {
-        const jsonString = JSON.stringify(importedFixtures[fixture]);
-        const model = Publication.parse(jsonString);
-        expect(model.stringify()).toEqual(jsonString);
+      const jsonString = JSON.stringify(importedFixtures[fixture]);
+      const model = Publication.parse(jsonString);
+      expect(model.stringify()).toEqual(jsonString);
     });
   });
 });
