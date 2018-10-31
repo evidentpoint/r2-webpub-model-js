@@ -32,6 +32,7 @@
   ],
   "scripts": {
     "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "format": "prettier --config .prettierrc --write 'src/**/*.ts' 'test/**/*.ts' ",
     "prebuild": "rimraf lib",
     "build": "run-s build:*",
     "build:tsc": "tsc",
