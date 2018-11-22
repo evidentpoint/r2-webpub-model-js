@@ -1,8 +1,8 @@
 import { JsonDateConverter } from '../src/models/converters/date-converter';
 import { JsonNumberConverter } from '../src/models/converters/number-converter';
 import { JsonStringConverter } from '../src/models/converters/string-converter';
-import { JsonThingConverter } from '../src/models/metadata/converters/thing-json-converter';
-import { Thing } from '../src/models/metadata/thing';
+import { JsonThingConverter } from '../src/models/publication/converters/thing-json-converter';
+import { Thing } from '../src/models/publication/thing';
 
 describe('Converters', () => {
   test('date', () => {

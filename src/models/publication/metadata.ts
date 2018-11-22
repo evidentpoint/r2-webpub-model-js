@@ -6,15 +6,21 @@ import {
   OnDeserialized,
 } from 'ta-json-x';
 
-import { JsonStringConverter } from './converters/string-converter';
+import { JsonStringConverter } from '../converters/string-converter';
 
-import { BelongsTo } from './metadata/belongsto';
-import { Contributor } from './metadata/contributor';
-import { IStringMap } from './metadata/multilang';
-import { Subject } from './metadata/subject';
+import { MetadataCore, ReadingProgression } from './interfaces/metadata-core';
+import { MultiLangString } from './interfaces/multi-lang-string';
+
+import { BelongsTo } from './belongs-to';
+import { Contributor } from './contributor';
+import { Subject } from './subject';
+import { Properties } from './properties';
+import { MediaOverlay } from './media-overlay';
 
 @JsonObject()
-export class Metadata {
+export class Metadata implements MetadataCore {
+  // Core
+
   @JsonProperty('@type')
   public type!: string;
 
@@ -25,10 +31,10 @@ export class Metadata {
   // @JsonType(String)
   // not needed because primitive string union with
   // simple object type (string keys, string values)
-  public title!: string | IStringMap; // | string[] | IStringMap[]
+  public title!: string | MultiLangString; // | string[] | MultiLangString[]
 
   @JsonProperty('subtitle')
-  public subtitle!: string | IStringMap;
+  public subtitle!: string | MultiLangString;
 
   @JsonProperty('modified')
   public modified!: Date;
@@ -97,7 +103,7 @@ export class Metadata {
   public imprint!: Contributor[];
 
   @JsonProperty('readingProgression')
-  public readingProgression!: 'auto' | 'ltr' | 'rtl';
+  public readingProgression!: ReadingProgression;
 
   @JsonProperty('description')
   public description!: string;
@@ -114,6 +120,25 @@ export class Metadata {
   @JsonProperty('subject')
   @JsonElementType(Subject)
   public subject!: Subject[];
+
+  // EPUB extension
+
+  @JsonProperty('rendition')
+  public rendition!: Properties;
+
+  @JsonProperty('source')
+  public source!: string;
+
+  @JsonConverter(JsonStringConverter)
+  @JsonProperty('epub-type')
+  @JsonElementType(String)
+  public epubType!: string[];
+
+  @JsonProperty('rights')
+  public rights!: string;
+
+  @JsonProperty('media-overlay')
+  public mediaOverlay!: MediaOverlay;
 
   @OnDeserialized()
   // tslint:disable-next-line:no-unused-variable
