@@ -1,11 +1,11 @@
 import { JsonObject, JsonProperty, OnDeserialized } from 'ta-json-x';
 
-import { IStringMap } from './multilang';
+import { MultiLangString } from './interfaces/multi-lang-string';
 
 @JsonObject()
 export class Thing {
   @JsonProperty('name')
-  public name!: string | IStringMap;
+  public name!: string | MultiLangString;
 
   @JsonProperty('identifier')
   public identifier!: string;

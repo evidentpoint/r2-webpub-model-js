@@ -8,18 +8,22 @@ import {
   propertyConverters,
 } from 'ta-json-x';
 
-import { JsonStringConverter } from './converters/string-converter';
-import { JsonDateConverter } from './converters/date-converter';
-import { JsonNumberConverter } from './converters/number-converter';
+import { JsonStringConverter } from '../converters/string-converter';
+import { JsonDateConverter } from '../converters/date-converter';
+import { JsonNumberConverter } from '../converters/number-converter';
 
 propertyConverters.set(Date, new JsonDateConverter());
 propertyConverters.set(Number, new JsonNumberConverter());
 
 import { Metadata } from './metadata';
 import { Link } from './link';
+import { PublicationCore } from './interfaces/publication-core';
+import { PublicationEPUB } from './interfaces/publication-epub';
 
 @JsonObject()
-export class Publication {
+export class Publication implements PublicationCore, PublicationEPUB {
+  // Core
+
   @JsonConverter(JsonStringConverter)
   @JsonProperty('@context')
   @JsonElementType(String)
@@ -39,6 +43,36 @@ export class Publication {
   @JsonProperty('resources')
   @JsonElementType(Link)
   public resources!: Link[];
+
+  // EPUB extension
+
+  @JsonProperty('toc')
+  @JsonElementType(Link)
+  public toc!: Link[];
+
+  @JsonProperty('page-list')
+  @JsonElementType(Link)
+  public pageList!: Link[];
+
+  @JsonProperty('landmarks')
+  @JsonElementType(Link)
+  public landmarks!: Link[];
+
+  @JsonProperty('loi')
+  @JsonElementType(Link)
+  public loi!: Link[];
+
+  @JsonProperty('loa')
+  @JsonElementType(Link)
+  public loa!: Link[];
+
+  @JsonProperty('lov')
+  @JsonElementType(Link)
+  public lov!: Link[];
+
+  @JsonProperty('lot')
+  @JsonElementType(Link)
+  public lot!: Link[];
 
   public static parse(json: string): Publication {
     return TaJson.parse<Publication>(json, Publication);

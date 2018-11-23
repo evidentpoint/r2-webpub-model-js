@@ -1,2 +1,1 @@
-export { Publication } from './models/publication';
-export { EPUBPublication } from './extensions/epub/publication';
+export { Publication } from './models/publication/publication';
