@@ -1,0 +1,10 @@
+dist: xenial
+branches:
+  only:
+  - master
+language: node_js
+node_js: lts/*
+install:
+- npm install
+script:
+- npm run test
