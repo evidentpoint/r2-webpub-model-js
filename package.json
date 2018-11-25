@@ -16,7 +16,8 @@
   "module": "lib/readium-shared-models.js",
   "typings": "lib/types/readium-shared-models.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "author": {
     "name": "Readium Foundation",
