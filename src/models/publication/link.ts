@@ -6,7 +6,7 @@ import {
   OnDeserialized,
 } from 'ta-json-x';
 
-import { JsonStringConverter } from '../converters/string-converter';
+import { JsonStringConverter } from '../../converters/string-converter';
 
 import { Properties } from './properties';
 import { LinkCore, Relation } from './interfaces/link-core';

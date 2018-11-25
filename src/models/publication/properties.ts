@@ -1,5 +1,5 @@
 import { JsonConverter, JsonElementType, JsonObject, JsonProperty } from 'ta-json-x';
-import { JsonStringConverter } from '../converters/string-converter';
+import { JsonStringConverter } from '../../converters/string-converter';
 import { OrientationProperty, PageProperty, PropertiesCore } from './interfaces/properties-core';
 import {
   ContainsMediaType,

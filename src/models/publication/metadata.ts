@@ -6,7 +6,7 @@ import {
   OnDeserialized,
 } from 'ta-json-x';
 
-import { JsonStringConverter } from '../converters/string-converter';
+import { JsonStringConverter } from '../../converters/string-converter';
 
 import { MetadataCore, ReadingProgression } from './interfaces/metadata-core';
 import { MultiLangString } from './interfaces/multi-lang-string';

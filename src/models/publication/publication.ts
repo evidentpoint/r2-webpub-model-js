@@ -8,9 +8,9 @@ import {
   propertyConverters,
 } from 'ta-json-x';
 
-import { JsonStringConverter } from '../converters/string-converter';
-import { JsonDateConverter } from '../converters/date-converter';
-import { JsonNumberConverter } from '../converters/number-converter';
+import { JsonStringConverter } from '../../converters/string-converter';
+import { JsonDateConverter } from '../../converters/date-converter';
+import { JsonNumberConverter } from '../../converters/number-converter';
 
 propertyConverters.set(Date, new JsonDateConverter());
 propertyConverters.set(Number, new JsonNumberConverter());

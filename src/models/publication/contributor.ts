@@ -6,7 +6,7 @@ import {
   propertyConverters,
 } from 'ta-json-x';
 
-import { JsonStringConverter } from '../converters/string-converter';
+import { JsonStringConverter } from '../../converters/string-converter';
 import { JsonThingConverter } from './converters/thing-json-converter';
 
 import { Thing } from './thing';
