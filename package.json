@@ -1,6 +1,6 @@
 {
   "name": "@readium/shared-models",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Readium Web Publication Model for JS (TypeScript)",
   "keywords": [
     "readium",
@@ -37,7 +37,7 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "format": "prettier --config .prettierrc --write 'src/**/*.ts' 'test/**/*.ts' ",
-    "prebuild": "rimraf lib",
+    "prebuild": "rimraf lib dist",
     "build": "run-s build:*",
     "build:tsc": "tsc",
     "build:rollup": "rollup -c rollup.config.js",
