@@ -6,7 +6,7 @@ import typescript from 'rollup-plugin-typescript2';
 
 const pkg = require('./package.json');
 
-const libraryName = pkg.name;
+const libraryName = pkg.name.replace('@', '').replace('/', '-');
 
 export default {
   input: `src/${libraryName}.ts`,

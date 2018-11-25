@@ -1,4 +1,4 @@
-import { Publication } from '../src/r2-webpub-model-js';
+import { Publication } from '../src/models/publication/publication';
 
 const FIXTURES_PATH = './fixtures';
 const FIXTURES = ['simple', 'complex'];

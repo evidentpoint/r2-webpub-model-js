@@ -12,9 +12,9 @@
     "model",
     "parser"
   ],
-  "main": "dist/r2-webpub-model-js.umd.js",
-  "module": "lib/r2-webpub-model-js.js",
-  "typings": "lib/types/r2-webpub-model-js.d.ts",
+  "main": "dist/readium-shared-models.umd.js",
+  "module": "lib/readium-shared-models.js",
+  "typings": "lib/types/readium-shared-models.d.ts",
   "files": [
     "lib"
   ],
