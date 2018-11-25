@@ -19,6 +19,9 @@
     "lib",
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Readium Foundation",
     "organization": "Readium Foundation",
