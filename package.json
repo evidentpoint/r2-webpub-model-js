@@ -1,7 +1,7 @@
 {
   "name": "@readium/shared-models",
   "version": "1.0.0-alpha.2",
-  "description": "Readium Web Publication Model for JS (TypeScript)",
+  "description": "Readium Shared Models for JS (TypeScript)",
   "keywords": [
     "readium",
     "readium2",
